@@ -1,0 +1,48 @@
+.social-media-container {
+    position: fixed;
+    right: 10px; /* Distance from the right edge */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for proper alignment */
+    display: flex;
+    flex-direction: column; /* Stack icons vertically */
+    gap: 10px; /* Space between icons */
+    z-index: 1000; /* Ensure it appears above other content */
+  }
+  
+  .social-icon {
+    position: relative; /* For positioning the text */
+    width: 200px; /* Expanded width to accommodate text slide */
+    height: 50px; /* Set square size */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align icon and text horizontally */
+    font-size: 24px; /* Adjust icon size */
+    background-color: #f0f0f0; /* Default background color */
+    color: #555; /* Default icon color */
+    border-radius: 8px; /* Slightly rounded corners */
+    text-decoration: none;
+    overflow: hidden; /* Ensure smooth text transition */
+    transition: all 0.3s ease; /* Smooth hover animation */
+    padding-left: 10px; /* Add some spacing for the icon */
+  }
+  
+  .social-icon span {
+    margin-left: 10px; /* Space between icon and text */
+    opacity: 0; /* Hidden by default */
+    transform: translateX(50px); /* Position text outside */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    color: #fff; /* White text color */
+    font-size: 16px; /* Adjust font size for readability */
+  }
+  
+  .social-icon:hover {
+    background-color: #28a745; /* Green background on hover */
+    color: #fff; /* White icon color on hover */
+    transform: translateX(-10px); /* Slide icon to the left */
+  }
+  
+  .social-icon:hover span {
+    opacity: 1; /* Show text */
+    transform: translateX(0); /* Slide text into view */
+  }
+  

@@ -1,0 +1,131 @@
+/* Footer Section */
+.footer {
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+
+.footer h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.menu-footer-consultant {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    bottom: 150px;
+}
+
+.specialty-column {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+.consultant li a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 14px;
+}
+
+.consultant li a:hover {
+    color: #1abc9c;
+}
+
+/* Footer Title - Fixed at the bottom */
+.footer_title {
+    
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    bottom: 150px;
+    width: 100%;
+   padding-top: 30px;
+    
+}
+.footer{
+    padding: 60px 60px 70px;
+}
+.footer h3{
+    position: relative;
+}
+h3{
+    font-size: 32px;
+    color: #916a1e;
+    text-transform: uppercase;
+}
+
+.footer_title h6 {
+    font-size: 18px;
+}
+
+/* Footer Text Styling */
+.footer_title p {
+    margin: 0;
+    font-size: 16px;
+    display: block;
+}
+
+/* Prevent content from going under the footer */
+body {
+    margin: 0;
+    padding-bottom: 0px; /* Prevent the page content from overlapping with the footer */
+    font-family: Montserrat, sans-serif;
+}
+.ask .con{
+    color: #fff;
+    display: block;
+    width: 504px;
+    height: 70px;
+    /* background: url(/wp-content/themes/venkataeswara/images/make1.png) no-repeat; */
+    background: linear-gradient(to right, #ccd909 10%,#9abe57 80%);
+    background-position: left 0;
+    padding: 20px 90px 20px 60px;
+    font-size: 25px;
+    line-height: 25px;
+    text-align: center;
+
+}
+.make .link {
+    color: #fff;
+    display: block;
+    width: 504px;
+    height: 70px;
+    /* background: url(/wp-content/themes/venkataeswara/images/make1.png) no-repeat; */
+    background: linear-gradient(to right,#9abe57 20%, #4b9c2e 80%);
+    background-position: left 0;
+    padding: 20px 90px 20px 60px;
+    font-size: 25px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.links {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: 0 0;
+    z-index: 3;
+}
+
+
+
+.col-sm-6{
+    position: relative;
+    /* width: 100%; */
+    min-height: 1px;
+    /* padding-right: 15px;
+    padding-left: 15px; */
+}
+.row {
+    /* display: -ms-flexbox; */
+    display: flex;
+}
+
+@media (min-width: 576px) {
+    .col-sm-6 {
+        /* -ms-flex: 0 0 50%; */
+        /* flex: 0 0 50%; */
+        /* max-width: 50%; */
+    }
+}

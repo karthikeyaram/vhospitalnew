@@ -1,0 +1,553 @@
+/* Banner container */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+  overflow: hidden;
+  z-index: 0; 
+  margin-top: -6%; 
+  
+}
+.nav-home {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; 
+  background-color: rgba(0, 0, 0, 0.5); 
+  color: white; 
+  padding: 10px 20px; 
+  box-sizing: border-box;
+}
+
+.slide {
+  width: 100%;
+  min-height: 100%; 
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transition: all 1s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  max-height: 100%; 
+  object-fit: cover; 
+  object-position:center;
+  display: block;
+  margin: 0 auto; 
+  position: absolute;
+  bottom: 0; 
+  top:0;
+  left:0;
+}
+
+.active {
+  left: 0;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: white; 
+  background-color: transparent; 
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+  opacity: 0.7; 
+  transition: opacity 0.3s ease; 
+}
+.arrow:hover {
+  opacity: 1;
+}
+
+.arrow-left {
+  left: 20px;
+}
+
+.arrow-right {
+  right: 20px;
+}
+
+/* Responsive Adjustments for smaller screens */
+@media (max-width: 1024px) {
+  .banner {
+    min-height: 80vh; /* Adjust based on your needs for smaller screens */
+  }
+}
+
+/*---------- banner section End--------- */
+
+/* ----content-------- */
+.row {
+  display: flex;
+}
+
+.content {
+  padding: 20px 60px;
+}
+
+.box h1 {
+  font-family: Montserrat, sans-serif;
+  font-size: 44px;
+  color: #916a1e;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.banner-left {
+  display: inline-block;
+  padding: 10% 0;
+}
+
+.box p {
+  font-size: 24px;
+  font-family: sans-serif;
+}
+
+.box {
+  position: relative;
+  padding-right: 16%;
+  z-index: 0;
+  clip-path: polygon(0 0, 100% 0, 84% 100%, 0 100%);
+  background: #fff;
+}
+
+/* ----content-------- */
+
+/* -----video---- */
+.video-position {
+  position: relative;
+  display: inline-block;
+  width: 86%;
+  margin-top: 50px;
+}
+
+.embed, iframe, object {
+  max-width: 100%;
+  padding: 20px 0 0;
+}
+.title img{
+  width: 560px;
+}
+
+iframe {
+  width: 560px;
+  height: 315px;
+}
+
+/* Video overlay */
+.iframe-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.overlay-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Removed opacity to make the video clearer */
+  opacity: 1;
+}
+
+.title h3 {
+  position: absolute;
+  bottom: 40px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.youtube-button {
+  position: absolute;
+  bottom: 10px;
+  background-color: #ff0000;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.youtube-button:hover {
+  background-color: #cc0000;
+}
+
+/* Cursor pointer effect */
+.iframe-overlay:hover, .youtube-button:hover, .icons i:hover {
+  cursor: pointer;
+/* ----video---- */
+}
+/* Popup container */
+.video {
+  position: relative; /* Ensure the popup is positioned relative to this div */
+  overflow: hidden; /* Prevent the popup from going outside this div */
+}
+
+/* Popup overlay */
+.popup {
+  position: absolute; /* Position the popup relative to the .video container */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  pointer-events: auto; /* Enable interactions inside the popup */
+}
+
+/* Popup content */
+.popup-content {
+  position: relative;
+  width: 560px; /* Match the iframe size */
+  height: 315px; /* Match the iframe size */
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 50px;
+  background: transparent;
+  border: none;
+  color: rgb(95, 94, 94);
+  cursor: pointer;
+}
+.close-btn:hover{
+  color: white;
+}
+
+/* --------------- */
+.social-icons {
+  display: flex; /* Use flexbox for row alignment */
+  gap: 10px; /* Add spacing between buttons */
+  justify-content: center; /* Center the icons horizontally */
+  align-items: center; /* Align the icons vertically */
+  margin-top: 20px; /* Optional: Add space above the icons */
+}
+
+.social-icons button {
+  display: inline-flex;
+  width: 40px; /* Adjust size */
+  height: 40px; /* Adjust size */
+  border: none;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px; /* Icon size */
+  cursor: pointer;
+}
+
+.social-icons button.facebook {
+  background-color: #3b5998; /* Facebook color */
+  color: white;
+}
+
+.social-icons button.twitter {
+  background-color: #1DA1F2; /* Twitter color */
+  color: white;
+}
+.social-icons button.more {
+  background-color: #4d4d4d; /* Twitter color */
+  color: white;
+}
+.social-icons button:hover {
+  opacity: 0.9;
+}
+/* ------------------------ */
+
+.specialties-section {
+  padding: 60px 60px 0;
+  margin-top: -2px;
+}
+.special h3 {
+    font-size: 32px;
+    color: #916a1e;
+    text-transform: uppercase;
+}
+.special p{
+  font-size: 18px;
+    font-weight: 300;
+    padding-bottom: 20px;
+    margin: 0;
+    color: #000;
+
+}
+p{
+  font-family: serif;
+}
+.slider-wrap {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+.bx-wrapper {
+  border: none;
+  box-shadow: none;
+  margin: auto;
+  padding: 0 100px;
+}
+/* ---------------- */
+.slider-wrap {
+  margin: 30px auto;
+  overflow: hidden;
+  position: relative;
+  max-width: 80%;
+}
+
+.bx-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: max-content; /* Ensures that the wrapper will adjust to the total width of all images */
+}
+
+.slider-item {
+  margin: 0 10px; /* Adds space between items */
+  text-align: center;
+  flex-shrink: 0; /* Prevents the images from shrinking */
+  width: 250px; /* Adjust image size as needed */
+}
+
+.slider-item img {
+  width: 40%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slider-item p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrow-left {
+  background: url('../../Assets/icon/left.png');
+}
+
+.arrow-right {
+  background: url('../../Assets/icon/right.png');
+}
+/* ----------------- */
+.services {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cone {
+  flex: 0 0 50%; /* Take up 50% of the width */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.serv-text {
+  padding: 60px;
+}
+
+.tab-pane h3 {
+  color: #916a1e;
+  font-size: 35px;
+  font-family: sans-serif;
+  margin-bottom: 20px;
+}
+
+.tab-pane p {
+  font-size: 16px;
+  color: #000;
+  line-height: 1.5;
+    /* padding: 0 0 20px 0; */
+}
+
+.read-moreborder {
+  text-align: right; /* Align the link to the right */
+}
+
+.readmore {
+  font-size: 16px;
+  position: relative;
+  text-decoration: none;
+  color: #fff !important;
+  background: url(../../Assets/img/service.png)no-repeat;
+  padding: 8px 60px;
+  margin: 20px 0 0; /* Add margin to separate it from text */
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+
+.readmore:hover {
+  background-color: #555; /* Change background on hover */
+}
+
+.col-7 {
+  flex: 0 0 50%; /* Take up the remaining 50% */
+}
+p.read-moreborder,p.read-moreborder1 {
+  border: none;
+  border-bottom: 2px solid transparent;
+  text-align: right;
+  /* -webkit-border-image: linear-gradient(to right, #c7d715 0, #8db855 50%); */
+  border-image: linear-gradient(to right, #c7d715 0, #8db855 50%);
+  border-image-slice: 1;
+  padding: 0;
+  margin-left: -120px;
+  padding: 0 !important;
+}
+.inner{
+  background: url('../../Assets/img/inner-image3.jpg')no-repeat;
+  background-size: cover;
+  height: 506px;
+}
+
+.tab-content {
+  position: relative;
+  height: auto; /* Adjust this if you need to control the height */
+}
+
+.tab-pane {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+.content-item .active {
+  font-weight: bold;
+  color: #942f2f; /* Active label style */
+  border-bottom: 2px solid #942f2f; /* Active line color */
+}
+
+.content-item {
+  display: flex;
+  justify-content: end; /* Align items to the right */
+  padding: 10px 0; /* Optional: Add padding for spacing between items */
+}
+
+.content-item p {
+  margin: 0;
+  padding: 10px 20px; /* Adjust padding as needed */
+  position: relative; 
+  color: white;
+  cursor: pointer;
+}
+
+.content-item p::after {
+  content: "";
+  position: absolute;
+  bottom: -1px; 
+  left: 0;
+  width: 100%;
+  height: 1px; /* Height of the line */
+  background-color: #ffffff; 
+}
+
+.content-item .active::after {
+  background-color: #942f2f; /* Active line color */
+}
+
+/* ------------ */
+.quality{
+  padding: 80px 60px 70px;
+  background: linear-gradient(to right, #f8f9da 0, #e4f1e0 100%);
+}
+.row{
+  display: flex;
+}
+.col-sm-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space out the content */
+  min-height: 560px; /* Same height for all cards */
+}
+.col-sm-4.pad {
+  padding: 0 20px;
+  min-height: 560px;
+}
+.col-sm-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.col-sm-4 h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #916a1e;
+}
+
+.col-sm-4 p {
+  margin: 10px 0; /* Space between content */
+}
+p{
+  
+    font-size: 16px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    margin: 0;
+
+}
+.read-moreborder1 {
+  margin-top: auto; /* Push it to the bottom */
+  text-align: right;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(to left, #c7d715 0, #8db855 50%);
+  border-image-slice: 1;
+  padding: 0 !important;
+}
+p.read-moreborder1 {
+  border: none;
+  border-bottom: 2px solid transparent;
+  text-align: right;
+  /* -webkit-border-image: linear-gradient(to right, #c7d715 0, #8db855 50%); */
+  border-image: linear-gradient(to left, #c7d715 0, #8db855 50%);
+  border-image-slice: 1;
+  /* padding: 0; */
+  /* margin-left: -120px; */
+  padding: 0 !important;
+}
+
+
+/* ------------media code------------- */
+

@@ -1,0 +1,124 @@
+.ambu-banner{
+    background: url('../../Assets/banner/Banner-Template_ambulance.jpg')no-repeat;
+}
+/* ----------------- */
+.diet-banner{
+    background: url('../../Assets/banner/Banner_dietary.jpg')no-repeat;
+}
+
+/* ------------ */
+.emergen-banner{
+    background: url('../../Assets/banner/Banner_Emergency.jpg')no-repeat;
+}
+/* ---------- */
+.health-banner{
+    background: url('../../Assets/banner/Banner_health-checkups-1.jpg')no-repeat;
+}
+.col-lg-6  h4 {
+    font-size: 28px !important;
+    font-weight: 700;
+    color: #916a1e;
+    text-transform: uppercase;
+    padding: 10px 0;
+}
+.su-accordion, .su-accordion .su-spoiler, .su-accordion.accordion {
+    margin: 0 !important;
+}
+.su-accordion.accordion br {
+    display: none;
+}
+.su-accordion .su-spoiler {
+    margin: 0 !important;
+}
+.su-spoiler-title:hover {
+    background: linear-gradient(to right, #ccd909 0, #9abe57 51%, #4b9c2e 100%);
+}
+/* .su-spoiler-title {
+    position: relative;
+    cursor: pointer;
+    min-height: 20px;
+    line-height: 20px;
+    padding: 7px 7px 7px 34px;
+    font-weight: 700;
+    font-size: 13px;
+} */
+.su-spoiler-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    background-color: #5fa341;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+  }
+.su-spoiler-title {
+    padding: 10px 20px !important;
+    background-color: #5fa341;
+    color: #fff;
+    font-weight: 500 !important;
+}
+.su-spoiler-title {
+    font-size: 20px !important;
+}
+.su-spoiler-style-default>.su-spoiler-content {
+    padding: 0em 0 0em 27px;
+}
+.su-spoiler-content {
+    padding: 14px;
+    transition: padding-top .2s;
+}
+.su-spoiler-content {
+    background: #e5f2df;
+}
+.su-u-trim>:first-child {
+    margin-top: 0;
+}
+strong {
+    font-weight: bolder;
+}
+.col-sm-6{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.su-spoiler-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  
+  .su-spoiler-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.su-spoiler-content.open {
+    max-height: none; /* Allow content to expand dynamically */
+    height: auto;     /* Automatically adjust to the content's height */
+    overflow: visible; /* Ensure all content is shown */
+}
+
+.su-spoiler-content.closed {
+    max-height: 0;
+    overflow: hidden;
+}
+
+
+  /* ---------------------- */
+  .imaging-banner{
+    background: url('../../Assets/banner/Banner_Imaging_12.jpg')no-repeat;
+  }
+
+  /* ---------------- */
+  .icu-banner{
+    background: url('../../Assets/banner/Banner-ICU-4.jpg')no-repeat;
+  }
+  /* ----------------- */
+  .lab-banner{
+    background: url('../../Assets/banner/Banner-Template_laboratory.jpg')no-repeat;
+  }
