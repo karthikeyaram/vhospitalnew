@@ -122,3 +122,13 @@ strong {
   .lab-banner{
     background: url('../../Assets/banner/Banner-Template_laboratory.jpg')no-repeat;
   }
+  /* ----------- */
+  .opthea-banner{
+    background: url('../../Assets/banner/Banner-operating-theatres.jpg')no-repeat;
+  }
+  /* ------------ */
+  .physio-banner{
+    background: url('../../Assets/banner/Banner-Template_physiotherapy.jpg')no-repeat;
+  }
+  /* ----------- */
+ 

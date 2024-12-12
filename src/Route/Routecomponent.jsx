@@ -45,6 +45,14 @@ import Healthcheckups from '../components/Services/Healthcheckups'
 import Imaging from '../components/Services/Imaging'
 import Intensivecareunit from '../components/Services/Intensivecareunit'
 import Laboratory from '../components/Services/Laboratory'
+import Operatingtheatres from '../components/Services/Operatingtheatres'
+import Physiotherapyrehabi from '../components/Services/Physiotherapyrehabi'
+import Founderhistoryvh from '../components/AboutUs/Founderhistoryvh'
+import Missionvision from '../components/AboutUs/Missionvision'
+import Guidingphilosophy from '../components/AboutUs/Guidingphilosophy'
+import Insurance from '../components/AboutUs/Insurance'
+import Tieups from '../components/AboutUs/Tieups'
+import Gallery from '../components/AboutUs/Gallery'
 
 const Routecomponent = () => {
   return (
@@ -97,12 +105,16 @@ const Routecomponent = () => {
           <Route path='/services/imaging-venkataeswara-hospitals/' element={<Imaging/>}/>
           <Route path='/specialities/icu-venkataeswara-hospitals/' element={<Intensivecareunit/>}/>
           <Route path='/services/laboratory-venkataeswara-hospitals/' element={<Laboratory/>}/>
+          <Route path='/services/operating-theatres-venkataeswara-hospitals/' element={<Operatingtheatres/>}/>
+          <Route path='/services/physiotherapy-rehabilitation-venkataeswara-hospitals/' element={<Physiotherapyrehabi/>}/>
+          <Route path='/about-us/founder-venkataeswara-hospitals/' element={<Founderhistoryvh/>}/>
+          <Route path='/about-us/mission-and-vision-venkataeswara-hospitals/' element={<Missionvision/>}/>
+          <Route path='/about-us/guiding-philosophy-venkataeswara-hospitals/' element={<Guidingphilosophy/>}/>
+          <Route path='/about-us/insurance-venkataeswara-hospitals/' element={<Insurance/>}/>
+          <Route path='/about-us/tieups-venkataeswara-hospitals/' element={<Tieups/>}/>
+          <Route path='/gallery' element={<Gallery/>}/>
           
-
-
-
-
-
+          
 
         </Routes>
       </BrowserRouter>

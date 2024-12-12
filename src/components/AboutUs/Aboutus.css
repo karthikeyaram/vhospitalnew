@@ -1,0 +1,42 @@
+.found-banner{
+    background: url('../../Assets/banner/urology-banner.jpg')no-repeat;
+  }
+  /* ---------------- */
+  .mission-banner{
+    background: url('../../Assets/banner/Banner-mission-Home.jpg')no-repeat;
+  }
+  /* ------------- */
+  .guiding-banner{
+    background: url('../../Assets/banner/Banner_guiding_26.jpg')no-repeat;
+  }
+  /* ------------ */
+  .insurance-banner{
+    background: url('../../Assets/banner/Banner_insurance.jpg')no-repeat;
+  }
+  /* ------------- */
+  .tieups-banner{
+    background: url('../../Assets/banner/Banner-Tieups_28.jpg')no-repeat;
+  }
+  p.image-center {
+    text-align: center;
+    padding: 0 120px 0 0 !important;
+}
+/* ------------------ */
+.su-custom-gallery-align-left {
+    justify-content: flex-start;
+}
+.su-custom-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1.5em;
+}
+.su-custom-gallery-slide {
+    position: relative;
+    flex: 0 0 auto;
+    margin: .5em;
+}
+.su-custom-gallery-slide {
+    position: relative;
+    flex: 0 0 auto;
+    margin: .5em;
+}

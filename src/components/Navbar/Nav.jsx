@@ -60,8 +60,8 @@ const Nav = () => {
                 { id: 3.5, subtitle: "Imaging", path: "/services/imaging-venkataeswara-hospitals/" },
                 { id: 3.6, subtitle: "Intensive Care Unit (ICU)", path: "/specialities/icu-venkataeswara-hospitals/" },
                 { id: 3.7, subtitle: "Laboratory", path: "/services/laboratory-venkataeswara-hospitals/" },
-                { id: 3.8, subtitle: "Operating Theatres", path: "/operating-theatres" },
-                { id: 3.9, subtitle: "Physiotherapy & Rehabilitation", path: "/physiotherapy" }
+                { id: 3.8, subtitle: "Operating Theatres", path: "/services/operating-theatres-venkataeswara-hospitals/" },
+                { id: 3.9, subtitle: "Physiotherapy & Rehabilitation", path: "/services/physiotherapy-rehabilitation-venkataeswara-hospitals/" }
             ]
         },
         {
@@ -73,11 +73,11 @@ const Nav = () => {
         {
             id: 5, title: "About Us", 
             sublist: [
-                { id: 5.1, subtitle: "Founder/History of VH", path: "/founder-history" },
-                { id: 5.2, subtitle: "Mission and Vision", path: "/mission-vision" },
-                { id: 5.3, subtitle: "Guiding Philosophy", path: "/guiding-philosophy" },
-                { id: 5.4, subtitle: "Insurance", path: "/insurance" },
-                { id: 5.5, subtitle: "Tie - Ups", path: "/tie-ups" },
+                { id: 5.1, subtitle: "Founder/History of VH", path: "/about-us/founder-venkataeswara-hospitals/" },
+                { id: 5.2, subtitle: "Mission and Vision", path: "/about-us/mission-and-vision-venkataeswara-hospitals/" },
+                { id: 5.3, subtitle: "Guiding Philosophy", path: "/about-us/guiding-philosophy-venkataeswara-hospitals/" },
+                { id: 5.4, subtitle: "Insurance", path: "/about-us/insurance-venkataeswara-hospitals/" },
+                { id: 5.5, subtitle: "Tie - Ups", path: "/about-us/tieups-venkataeswara-hospitals/" },
                 { id: 5.6, subtitle: "Gallery", path: "/gallery" },
                 { id: 5.7, subtitle: "Testimonial - Videos", path: "/testimonials" },
                 { id: 5.8, subtitle: "Career", path: "/career" }
