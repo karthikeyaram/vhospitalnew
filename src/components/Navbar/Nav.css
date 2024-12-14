@@ -1,23 +1,36 @@
+/* General Navigation Container */
 .nav_container {
     width: 100%;
-    position: relative;
-    z-index: 10;
+    position: fixed;
+    z-index: 1000;
     background: transparent;
+    top: 0px;
 }
 
+/* Logo Container */
 .logo_item {
     display: flex;
     justify-content: center;
-    /* padding-top: 30px; */
     width: 100%;
+    margin-top: 10px;
 }
-.logo_nav{
+
+.logo_nav {
     display: flex;
-    
+    align-items: center; /* Align logos vertically */
+    justify-content: center; /* Center align logos and line */
+}
+
+.logo_nav .separator {
+    width: 2px; /* Thickness of the line */
+    height: 80px; /* Match the height of the logos */
+    background: linear-gradient(to right, #ccd909 10%,#9abe57 80%);
+    margin: 0 10px 0 0; 
 }
 
 .nav_logo1 img {
-    width: 140px;
+    width: 150px;
+    height: 80px;
     margin: 0 20px;
     background: transparent;
 }
@@ -28,34 +41,22 @@
     background: transparent;
 }
 
-.nav_item {
-    width: 70%;
-    height: 80px;
-    background: url('../../Assets/nav/nav.jpg');
-    background-size: cover;
-    display: flex;
-    align-items: center; /* Centers items vertically */
-    justify-content: center; /* Centers items horizontally */
-    position: relative;
-    z-index: 1;
-}
-
+/* Navigation Items */
 .nav_item ul {
     display: flex;
     justify-content: space-between; /* Ensures even spacing between menu items */
-   
     max-width: 1200px; /* Optional: Limit max-width for centered layout */
     margin: 0;
     padding: 0;
-   
     align-items: center; /* Keep menu items vertically aligned */
 }
 
+/* Navbar List Item */
 .nav_item ul .navbar_list {
     list-style-type: none;
     color: #fff;
-    padding: 16px 20px;
-    font-size: 15px;
+    padding: 10px 8px;
+    font-size: 12px;
     cursor: pointer;
     position: relative;
     padding-bottom: 10px; /* Add 10px gap below the title */
@@ -83,14 +84,20 @@
 }
 
 .nav_item ul .navbar_list p:hover {
+    color: rgb(52, 188, 212);
+    transition: color 0.3s ease;
+}
+
+.dropdown-arrow:hover {
     color: red;
     transition: color 0.3s ease;
 }
 
+/* Dropdown Menu */
 .dropdown_container {
     flex-direction: column;
     position: absolute;
-    top: 58px;
+    top: 45px;
     left: 0;
     background-color: #569f39;
     text-wrap: nowrap;
@@ -100,13 +107,14 @@
     display: none;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-    transform: translateY(-10px);
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     z-index: 2;
+    justify-items: flex-start;
+
+    /* Make the dropdown scrollable */
+    max-height: 500px; /* Adjust this value to control the maximum height */
 }
 
+/* Dropdown Item */
 .dropdown_item {
     padding: 8px 20px;
     color: #fff;
@@ -116,10 +124,12 @@
 }
 
 .dropdown_item:hover {
-    color: red;
-    background-color: rgba(255, 255, 255, 0.1);
+    color: red; /* Text color on hover */
+    background: linear-gradient(to right, #ccd909 10%,#9abe57 80%);
+    transition: background 0.3s ease; /* Smooth transition for the gradient */
 }
 
+/* Show Dropdown on Hover */
 .navbar_list:hover .dropdown_container {
     display: block;
     opacity: 1;
@@ -127,15 +137,166 @@
     transform: translateY(0);
 }
 
+/* Desktop View (1440px and above) */
 @media only screen and (min-width: 1440px) {
     .nav_container {
         width: 100%;
         display: flex;
     }
-    .logo_item {
-        width: 30%;
+    
+    .toggle-button {
+        display: none;
     }
+
+    .logo_item {
+        width: 25%;
+    }
+    .navbar_list p{
+        font-size: 16px;
+        font-family: 'Arial Narrow Bold';
+        /* text-transform: uppercase; */
+        letter-spacing: 1px;
+    }
+
     .nav_item {
-        width: 70%;
+        width: 75%;
+        height: 80px;
+        background:#1e5209; /* Dark Green, Light Green, Yellow, Light Yellow */
+        background-size: cover;
+        display: flex;
+        align-items: center; /* Centers items vertically */
+        justify-content: end; /* Centers items horizontally */
+        position: relative;
+        z-index: 1;
+        border-radius: 0 0 0px 150px; /* Optional: Add rounded corners */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+    }
+}
+
+/* Tablet View (768px to 1024px) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .nav_item {
+        width: 100%;
+        height: 65px;
+        /* background: url('../../Assets/nav/nav.jpg');/ */
+        background: #1e5209;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+    .toggle-button{
+        display: none;
+    }
+
+    .navbar_list p {
+        font-size: 12px;
+    }
+
+    .nav_item ul {
+        display: flex;
+        justify-content: space-around; /* Adjust menu item spacing */
+    }
+}
+
+/* Mobile View (375px to 475px) */
+@media only screen and (max-width: 475px) {
+    .nav_item {
+        display: none; /* Hide background image nav on very small screens */
+    }
+    
+    .nav_container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    .logo_item {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav_logo1 img {
+        width: 120px; /* Adjust logo size */
+        height: auto;
+    }
+
+    .nav_logo2 {
+        display: none; /* Hide second logo on mobile */
+    }
+
+    .logo_nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .separator {
+        display: none; /* Hide separator on mobile */
+    }
+
+    /* Toggle Button */
+    .toggle-button {
+        font-size: 24px;
+        color: #598d05;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: block; /* Show toggle button */
+        z-index: 1000; /* Ensure the toggle button is on top */
+        margin-right: 30px;
+    }
+
+    /* Mobile Nav Items */
+    .nav_item {
+        display: none; /* Hide menu by default */
+        position: absolute;
+        top: 80px; /* Position menu below the navbar */
+        left: 0;
+        width: 100%;
+        background: #1e5209;
+        flex-direction: column;
+        padding: 20px 0;
+        z-index: 999;
+    }
+
+    .nav_item ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        align-items: start;
+    }
+
+    .navbar_list {
+        list-style-type: none;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        text-align: left; /* Align text left for mobile */
+    }
+
+    /* .navbar_list p:hover {
+        color:rgb(5, 175, 167);
+    } */
+
+    .dropdown_container {
+        display: none; /* Hide dropdown by default */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .navbar_list:hover .dropdown_container {
+        display: block; /* Show dropdown on hover */
+        opacity: 1;
+    }
+
+    /* Display menu when the toggle button is clicked */
+    .nav_item.show {
+        display: flex;
     }
 }

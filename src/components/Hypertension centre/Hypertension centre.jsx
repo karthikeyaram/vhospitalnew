@@ -2,6 +2,7 @@ import React from 'react';
 import Nav from '../Navbar/Nav';
 import Footer from '../Footer/Footer';
 import './Hyper.css';
+import hype from '../../Assets/img/hyper-banner.jpg';
 
 const Hypertension = () => {
     const hypimg = [
@@ -34,13 +35,16 @@ const Hypertension = () => {
             <div className="hyper">
                 <div className="banners">
                     <div className="container">
-                        <div className="rows">
-                            <div className="col-lg-6 order-lg-first">
+                        <div className="rows img-center">
+                            <div className="col-lg-6 order-last order-lg-first">
                                 <div className="banner-left">
-                                    <div className="boxe">
-                                        <h2>Hypertension Centre</h2>
-                                    </div>
+                                    <h2>Hypertension Centre</h2>
                                 </div>
+                            </div>
+                            <div className="col-lg-6 order-lg-first">
+                                <picture className=''>
+                                    <img src={hype} alt="Hypertension Banner" className="image webpexpress-processed" />
+                                </picture>
                             </div>
                         </div>
                     </div>
@@ -53,7 +57,6 @@ const Hypertension = () => {
                     ))}
                 </div>
             </div>
-
             <Footer />
         </>
     );

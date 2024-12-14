@@ -1,108 +1,72 @@
-
-.banners{
-    background: url('../../Assets/img/hyper-banner.jpg');
-}
 .banners {
-    background-size: contain !important;
+    background-image: url('../../Assets/img/hyper-banner.jpg');
+    background-size: cover !important;
     background-repeat: no-repeat !important;
-    background-position-y: 44px;
-}
-.banners {
-  position: relative;
-  width: 100%;
-  height: 100vh; 
-  overflow: hidden;
-}
-/* .banners{margin-left: 100px;} */
-@media (min-width: 992px) {
-    .col-lg-6 {
-        -ms-flex: 0 0 50%;
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
 }
 
-.container {
-    max-width: none;
-    margin: 0 auto;
-    padding: 0 !important;
-}
-.container{
-    width: 100%;
-}
-.rows {
-    display: flex;
-    flex-wrap: wrap;
-}
-.rows{
-    margin: 0;
-}
-.boxe{
-    display: inline-block;
-}
-.rows>* {
-    flex-shrink: 0;
-    /* width: 100%; */
-    max-width: 100%;
-    /* padding-right: calc(var(--bs-gutter-x)* .5); */
-    /* padding-left: calc(var(--bs-gutter-x)* .5); */
-    /* margin-top: var(--bs-gutter-y); */
-}
-@media (min-width: 992px) {
-    .col-lg-6 {
-        -ms-flex: 0 0 50%;
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-}
-.hyper .banner-left {
-    position: relative;
+.banner-left {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the text */
     padding: 20px 60px;
-    padding-right: 16%;
-    height: 110vh !important;
     z-index: 1;
-    -webkit-clip-path: polygon(0 0, 100% 0, 84% 100%, 0 100%);
-    /* clip-path: polygon(0 0, 100% 0, 84% 100%, 0 100%); */
-    background: #fff !important;
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+    border-radius: 10px; /* Optional: Rounded corners for the background */
 }
-@media (min-width: 992px) {
-    .order-lg-first {
-        -ms-flex-order: -1;
-        order: -1;
-    }
-}
-.inners .col-lg-6 {
-    background: 0 0;
-}
-.col-lg-6 .banner-left {
-    position: relative;
-    padding: 20px 60px;
-    padding-right: 16%;
-    /* height: 110vh !important; */
-    z-index: 1;
-    background: #fff !important;
-}
+
 .banner-left h2 {
     font-size: 44px;
-    padding-left: 0px;
     color: #916A1E !important;
-}
-.boxe {
-    display: inline-block;
-    padding: 32% 0;
-}
-.boxe h2{
-    font-size: 44px;
-    padding-left: 0px;
+    margin: 0;
+    padding-left: 0;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out; /* Smooth transform transition */
 }
 
+.banner-left:hover h2 {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.col-lg-6.order-lg-first {
+    display: flex;
+    justify-content: center; /* Center image horizontally */
+    align-items: center; /* Center image vertically */
+}
+
+.col-lg-6.order-lg-first img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow to image */
+}
+
+/* Animation for the banner image */
+@keyframes zoomEffect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.banners:hover {
+    animation: zoomEffect 5s infinite; /* Add zoom animation */
+}
 
 /* Gallery Container */
-
-
-.pad-left{
-    padding-left: 30px;
-}
 .gallery-item {
     display: grid;
     grid-template-columns: repeat(4, minmax(200px, 1fr)); /* Slightly larger images */
@@ -127,25 +91,79 @@
 
 /* Hover Effect */
 .gallery-item img:hover {
-    transform: scale(1.1); /* Zoom effect */
+    transform: scale(1.7); /* Zoom effect */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .gallery-item {
-        grid-template-columns: repeat(3, minmax(150px, 1fr)); /* Adjusted image size for tablets */
+/* Responsive Design for Banner */
+@media (max-width: 1200px) {
+    .banner-left h2 {
+        font-size: 36px; /* Reduce font size for larger tablets */
+    }
+}
+
+@media (max-width: 992px) {
+    .banners {
+        height: 80vh; /* Reduce height for tablets */
+    }
+
+    .banner-left {
+        top: 40%;
+        padding: 10px 30px; /* Reduce padding */
+    }
+
+    .banner-left h2 {
+        font-size: 30px; /* Smaller text for tablets */
+    }
+
+    .col-lg-6.order-lg-first {
+        flex: 0 0 100%; /* Full-width image */
+    }
+
+    .col-lg-6.order-lg-first img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-top: 100p
     }
 }
 
 @media (max-width: 768px) {
+    .banners {
+        height: 60vh; /* Reduce height for mobile */
+    }
+
+    .banner-left {
+        top: 50%;
+        padding: 6px 20px;
+        margin-top: 47px;
+        margin-left: 20px;
+    }
+
+    .banner-left h2 {
+        font-size: 28px; /* Smaller text for mobile */
+    }
+
     .gallery-item {
-        grid-template-columns: repeat(2, minmax(150px, 1fr)); /* Adjusted image size for smaller devices */
+        grid-template-columns: repeat(2, 1fr); /* 2 images per row for mobile */
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
+    .banners {
+        height: 50vh; /* Further reduce height for smaller screens */
+    }
+
+    .banner-left h2 {
+        font-size: 24px; /* Very small text for very small devices */
+    }
+    .list-unstyled li{
+        margin-left: 50px;
+    }
+    .mb-4{
+        margin-left: 50px;
+    }
     .gallery-item {
-        grid-template-columns: 1fr; /* 1 image per row for mobile devices */
+        grid-template-columns: 1fr; /* 1 image per row for small mobile screens */
     }
 }

@@ -1,13 +1,6 @@
-import React from 'react';
-import './Nav.css';
-import { useState } from 'react';
-import logo1 from '../../Assets/logo/logo-2.png.jpg';
-import logo2 from '../../Assets/logo/erlogo.png.jpg';
-import { GoTriangleDown } from "react-icons/go";
-import { Link } from 'react-router-dom';
-import { FaSortDown } from "react-icons/fa";
+import React from 'react'
 
-const Nav = () => {
+const Nav1 = () => {
     const navbarData = [
         { id: 1, title: "Hypertension centre", path: "/hypertension-centre" },
         {
@@ -100,70 +93,15 @@ const Nav = () => {
         { id: 9, title: "Contact", path: "/" }
     ];
 
-    const [menuOpen, setMenuOpen] = useState(false);  // State to handle menu toggle
 
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);  // Toggle menu visibility
-    };
 
-    return (
-        <div className='nav_container'>
-            <div className="logo_item">
-                <div className="logo_nav">
-                    <Link to="/">
-                        <div className='nav_logo1' >
-                            <img src={logo1} alt="logo" />
-                        </div>
-                    </Link>
-                    <div class="separator"></div>
-                    <div className='nav_logo2'>
-                        <img src={logo2} alt="logo" />
-                    </div>
-                </div>
-
-            </div>
-           <button className="toggle-button" onClick={toggleMenu}>
-                {menuOpen ? '✖' : '☰'} {/* Change icon based on menuOpen state */}
-            </button>
-            <div className={`nav_item ${menuOpen ? 'show' : ''}`}>
-                <ul >
-                    {navbarData.map((navData) => (
-                        <li key={navData.id} className="navbar_list">
-                            <Link to={navData.path} style={{ textDecoration: "none", color: "#fff" }}>
-                                <p>
-                                    {navData.title}
-                                    {navData.sublist && <span className="dropdown-arrow"><FaSortDown style={{ color: "white" }} /></span>}
-                                </p>
-                            </Link>
-                            {navData.sublist && (
-                                <ul className="dropdown_container">
-                                    {navData.sublist.map((item, id) => (
-                                        typeof item === "object" ? (
-                                            <li key={id} className="dropdown_item">
-                                                <Link
-                                                    to={item.path}
-                                                    style={{
-                                                        textDecoration: "none",
-                                                        color: "#fff",
-                                                    }}
-                                                >
-                                                    {item.subtitle}
-                                                </Link>
-                                            </li>
-                                        ) : (
-                                            <li key={id} className="dropdown_item">
-                                                {item}
-                                            </li>
-                                        )
-                                    ))}
-                                </ul>
-                            )}
-                        </li>
-                    ))}
-                </ul>
-            </div>
+  return (
+    <>
+        <div className="container">
+            
         </div>
-    );
-};
+    </>
+  )
+}
 
-export default Nav;
+export default Nav1

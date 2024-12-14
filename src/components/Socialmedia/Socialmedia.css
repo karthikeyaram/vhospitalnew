@@ -1,48 +1,571 @@
 .social-media-container {
-    position: fixed;
-    right: 10px; /* Distance from the right edge */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Adjust for proper alignment */
-    display: flex;
-    flex-direction: column; /* Stack icons vertically */
-    gap: 10px; /* Space between icons */
-    z-index: 1000; /* Ensure it appears above other content */
-  }
-  
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* Align icons to the right */
+  gap: 4px;
+  z-index: 1000;
+}
+
+.social-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  /* Adjust size */
+  height: 40px;
+  /* Adjust size */
+  background-color: var(--icon-bg-color, #00494f);
+  /* Default background */
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+  /* Icon size */
+  border-radius: 8px;
+  /* Square with rounded edges */
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: green;
+  justify-content: flex-start;
+  /* Align icon to the left */
+  padding-left: 15px;
+  /* Add space for text */
+  width: 150px;
+  /* Expand width to show text */
+}
+
+.social-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  /* Hidden by default */
+  height: 100%;
+  background-color: var(--icon-bg-color, #00494f);
+  /* Default background color */
+  z-index: -1;
+  /* Send background behind icon */
+  transition: width 0.3s ease;
+}
+
+.social-icon:hover::before {
+  width: 100%;
+  /* Expand background on hover */
+}
+
+.social-icon span {
+  position: absolute;
+  right: -150%;
+  /* Hidden offscreen */
+  opacity: 0;
+  color: white;
+  font-size: 16px;
+  margin-left: 10px;
+  /* Space between icon and text */
+  white-space: nowrap;
+  transition: opacity 0.3s ease, right 0.3s ease;
+}
+
+.social-icon:hover span {
+  opacity: 1;
+  /* Show text on hover */
+  right: 15%;
+  /* Slide text into view */
+}
+
+/* Media query for size adjustments */
+@media (max-width: 768px) {
   .social-icon {
-    position: relative; /* For positioning the text */
-    width: 200px; /* Expanded width to accommodate text slide */
-    height: 50px; /* Set square size */
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .social-icon:hover {
+    width: 120px;
+  }
+
+  .social-icon span {
+    font-size: 14px;
+  }
+}
+
+/* -------- */
+/* General Icon Container */
+.icon-container {
+  position: fixed;
+  bottom: 125px;
+  right: 0;
+  z-index: 1000;
+  margin-right: 50px;
+}
+
+/* Style for the WhatsApp Icon */
+.icon-container a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #2db742;
+  color: white;
+  border-radius: 50%;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  bottom: 100px;
+  right: 104px;
+  width: 306px;
+  height: 287px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px 0 0 5px;
+  /* Ensure the border-radius is correctly set */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  /* Add shadow */
+  overflow: hidden;
+  /* Ensure the content does not overflow */
+}
+
+/* Green Modal */
+.modal-content.green-modal {
+  background-color: #2db742;
+  padding: 20px;
+  text-align: center;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-content .message-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #ffffff;
+}
+
+.modal-content p {
+  font-size: 13px;
+  color: white;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* White Modal */
+.modal-content.white-modal {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  align-items: center;
+  max-width: 100%;
+  color: #2db742;
+}
+
+.modal-content.white-modal p {
+  font-size: 12px;
+  color: black;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* Close Button */
+.close-button {
+  background-color: rgb(211, 5, 5);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 50px;
+}
+
+/*-------------- */
+.chat {
+  position: fixed;
+  bottom: 45px;
+  right: 50px;
+  background-color: rgb(37, 211, 102);
+  /* Green background */
+  color: white;
+  border-radius: 50%;
+  /* Ensures the circle shape */
+  padding: 14px;
+  width: 60px;
+  /* Set width to make it round */
+  height: 60px;
+  /* Set height to make it round */
+  font-size: 34px;
+  display: flex;
+  align-items: center;
+  /* Centers the icon vertically */
+  justify-content: center;
+  /* Centers the icon horizontally */
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
+  z-index: 1000;
+}
+
+/* -----------media code---------- */
+/* Hide social media icons for small screen sizes (320px to 767px) */
+@media (max-width: 767px) {
+  .social-media-container {
+    display: none;
+  }
+
+  .icon-container {
+    position: fixed;
+    bottom: 93px;
+    right: 0;
+    z-index: 1000;
+    margin-right: 30px;
+  }
+
+  .chat {
+    position: fixed;
+    bottom: 28px;
+    right: 20px;
+    background-color: rgb(37, 211, 102);
+    color: white;
+    border-radius: 50%;
+    padding: 14px;
+    width: 60px;
+    height: 60px;
+    font-size: 34px;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Align icon and text horizontally */
-    font-size: 24px; /* Adjust icon size */
-    background-color: #f0f0f0; /* Default background color */
-    color: #555; /* Default icon color */
-    border-radius: 8px; /* Slightly rounded corners */
-    text-decoration: none;
-    overflow: hidden; /* Ensure smooth text transition */
-    transition: all 0.3s ease; /* Smooth hover animation */
-    padding-left: 10px; /* Add some spacing for the icon */
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
+    z-index: 1000;
   }
-  
+}
+
+/* Show social media icons from 768px and up */
+@media (min-width: 768px) {
+  .social-media-container {
+    display: flex;
+  }
+}
+
+/* For larger screens, you can adjust the size and layout if needed */
+@media (min-width: 1024px) {
+  .social-icon {
+    width: 50px;
+    /* Adjust icon size for larger screens */
+    height: 50px;
+    font-size: 35px;
+    /* Icon size for medium screens */
+  }
+
   .social-icon span {
-    margin-left: 10px; /* Space between icon and text */
-    opacity: 0; /* Hidden by default */
-    transform: translateX(50px); /* Position text outside */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
-    color: #fff; /* White text color */
-    font-size: 16px; /* Adjust font size for readability */
+    font-size: 18px;
+    /* Font size for the text */
   }
-  
-  .social-icon:hover {
-    background-color: #28a745; /* Green background on hover */
-    color: #fff; /* White icon color on hover */
-    transform: translateX(-10px); /* Slide icon to the left */
+}
+
+/* For very large screens (over 1400px), you can further adjust */
+@media (min-width: 1400px) {
+  .social-icon {
+    width: 60px;
+    /* Adjust icon size for very large screens */
+    height: 60px;
+    font-size: 40px;
+    /* Icon size for large screens */
   }
-  
-  .social-icon:hover span {
-    opacity: 1; /* Show text */
-    transform: translateX(0); /* Slide text into view */
+
+  .social-icon span {
+    font-size: 20px;
+    /* Font size for the text */
   }
-  
+}
+
+/* -----------common appointment----start---------- */
+/* Contactform.css */
+.common {
+  position: fixed;
+  bottom: 60px; /* Stay at bottom 60px from viewport */
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, #ccd909, #9abe57);
+  border-radius: 50px 50px 0 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  height: 60px;
+  align-items: center;
+  transition: bottom 0.3s ease;
+  z-index: 999; /* Ensure it stays on top */
+}
+
+/* Link Styles */
+.link {
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  font-size: 18px;
+}
+
+.link:hover {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Popup Styles */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000; /* Ensure the popup stays above other content */
+}
+
+/* Popup Content */
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  height: auto;
+  width: 60%; /* Default width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.h3content {
+  color: #916a1e;
+  font-weight: bold;
+}
+
+/* Form Input Styles */
+.popup-content input,
+.popup-content textarea,
+.popup-content select {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.popup-content input {
+  font-size: 16px;
+}
+
+/* Submit Button Styles */
+
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* Media Queries */
+
+/* 320px to 676px */
+@media (max-width: 676px) {
+  .common {
+    display: block;
+    width: 100%;
+    bottom: 0;
+    border-radius: 0;
+  }
+
+  .popup-content {
+    width: 90%; /* Form width adjusts */
+    padding: 15px;
+  }
+.h3content{
+  font-size: 16px;
+}
+  .popup-content input,
+  .popup-content select {
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  .popup-content button {
+    font-size: 14px;
+    padding: 5px 8px;
+  }
+  input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 4px;
+  font-size: 13px; /* Ensures the same font size applies */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+.popup-content button {
+  padding: 1px 5px;
+  background-color: #1b511c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+form select {
+  width: 100%;
+  padding: 4px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+
+  /* Normalize browser styles */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-align: left;
+  display: inline-block;
+}
+
+}
+
+/* 676px to 768px */
+@media (min-width: 677px) and (max-width: 768px) {
+  .common {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  .popup-content button {
+    padding: 1px 5px;
+    background-color: #1b511c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .popup-content {
+    width: 80%; /* Adjust for larger screens */
+  }
+  input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 22px; /* Ensures the same font size applies */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+form select {
+  width: 100%;
+  padding: 10px;
+  font-size: 25px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+
+  /* Normalize browser styles */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-align: left;
+  display: inline-block;
+}
+}
+
+/* Above 768px */
+@media (min-width: 769px) {
+  .common {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+  }
+
+  .popup-content {
+    width: 60%;
+  }
+}
+
+/* Above 1440px */
+@media (min-width: 1440px) {
+  .popup-content {
+    width: 50%;
+  }
+
+  .popup-content input {
+    font-size: 18px;
+  }
+
+  .popup-content button {
+    font-size: 16px;
+  }
+  input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 22px; /* Ensures the same font size applies */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+form select {
+  width: 100%;
+  padding: 10px;
+  font-size: 25px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+
+  /* Normalize browser styles */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-align: left;
+  display: inline-block;
+}
+.popup-content button {
+  padding: 10px 15px;
+  background-color: #1b511c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+}

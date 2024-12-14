@@ -1,372 +1,162 @@
-
-.asth-banner{
-    background: url('../../Assets/img/asthbanner.jpg')no-repeat;
-}
-.container {
-    max-width: none;
-    margin: 0 auto;
-    padding: 0 !important;
-}
-
-/* @media (min-width: 992px) {
-    .order-lg-first {
-        -ms-flex-order: -1;
-        order: -1;
-    }
-}
-
-@media (min-width: 992px) {
-    .col-lg-6 {
-        -ms-flex: 0 0 50%;
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-} */
-
-.inner-asth .banner-left1 {
+/* Banner section styling */
+.asth-banner {
     position: relative;
-    padding: 20px 60px;
-    padding-right: 16%;
-    height: 110vh !important;
-    z-index: 1;
-    /* -webkit-clip-path: polygon(0 0, 100% 0, 84% 100%, 0 100%); */
-    /* clip-path: polygon(0 0, 100% 0, 84% 100%, 0 100%); */
-    background: #fff !important;
-}
-.boxe {
-    display: inline-block;
-    padding: 32% 0;
-}
-.boxe h1{
-    font-family:sans-serif;
-    font-size: 44px;
-    color: #916a1e;
-    text-transform: uppercase;
-    margin: 0;
-}
-.inner-asth .banner-left1 {
-    position: relative;
-    padding: 20px 60px;
-    padding-right: 16%;
-    height: 110vh !important;
-    z-index: 1;
-    -webkit-clip-path: polygon(0 0, 100% 0, 84% 100%, 0 100%);
-    /* clip-path: polygon(0 0, 100% 0, 77% 100%, 0 100%); */
-    background: #fff !important;
-}
-@media (min-width: 1400px) {
-    .containers{
-        max-width: 100% !important;
-    }
-}
-/* ------------------------ */
-.innerimage {
-    padding: 60px 0 0;
-}
-.background {
-    padding: 40px 60px;
-    background: url('../../Assets//icon/inner-image2.jpg') no-repeat;
+    width: 100%;
+    height: 100vh;  /* Full height of the viewport */
+    background-image: url('../../Assets/banner/Banner-Template_counsellor-1.jpg')no-repeat;  /* Banner image */
     background-size: cover;
-    color: #fff;
-}
-@media (min-width: 992px) {
-    .col-lg-6 {
-        -ms-flex: 0 0 50%;
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-}
-.innerpad{
-    padding: 40px 60px 0;
-}
-.inner-image .background p,.inner-image .innerpad p {
-    padding: 0 120px 10px 0px;
-}
-p {
-    font-size: 16px;
-    font-family: 'Roboto Slab', serif;
-    font-weight: 300;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;  /* Center the content vertically */
 }
 
-/* --------------------- */
-.consultant-pad {
-    padding: 60px;
-    text-align: center;
+/* Box container for the card content */
+.boxe {
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    opacity: 0;  /* Initially hidden */
+    animation: slideIn 1s ease-out forwards;  /* Card sliding in animation */
+    transform: translateY(50%);  /* Start position (off-screen bottom) */
 }
-.consultant-pad h4 {
-    padding: 0 0 60px 0;
-    margin: 0;
+
+/* Keyframes for sliding the boxe card from bottom to top */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-.consultant-pad h4{
-        font-size: 28px !important;
-        font-weight: 700;
+
+.col-lg-6 h3{
         color: #916a1e;
-        text-transform: uppercase;
-        padding: 10px 0;
     
 }
-.doctor {
-    padding-bottom: 30px;
-    padding-top: 50px;
-    max-width: 40%;
-    margin-left: 50px;
+/* Card content styling */
+.card-content {
+    background: rgba(255, 255, 255, 0.8);  /* Semi-transparent background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 600px;  /* Adjust card width */
+    margin-bottom: 30px;  /* Distance from the bottom */
 }
-.pods-ui-notice-front {
-    border: 1px solid;
-    margin: 10px 0;
-    padding: 15px;
-}
-.pods-ui-notice-front p:last-of-type {
-    margin-bottom: 0;
-}
-.pods-ui-notice-front p:first-of-type {
-    margin-top: 0;
-}
-.consultant-pad p {
-    margin: 0;
-    padding: 0 0 10px 0;
+
+/* Styling for h1 and p tags inside the card */
+.card-content h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 36px;
+    margin-bottom: 20px;
     color: #916a1e;
-    font-weight: 500;
-    font-family: inherit;
+    text-transform: uppercase;
 }
 
-
-
-.inner-image{
-    padding: 60px 0 0 ;
+.card-content p {
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
 }
 
-/* -----------------Anaesthesiology--  start---------------- */
-.anas-banner{
-    background: url('../../Assets/img/Banner-Template_anaesthesiology.jpg') no-repeat;
-}
-
-
-
-/* -----------------Anaesthesiology--  End---------------- */
-
-/* -----------------Cardiology--  start---------------- */
-
-.cardio-banner{
-    background: url('../../Assets/img/Banner-cardiology_5.jpg.jpg');
+/* Section styling for rows and columns */
+.rows {
+    display: flex;
+    gap: 20px; /* Space between columns */
 }
 
 .padding {
-    padding: 60px;
-}
-ul.list {
-    margin: 0;
-    font-weight: 300;
-    padding: 0 0 0 40px;
-}
-.list li {
-    list-style-type: none;
-    background: url('../../Assets/icon/square\ point.png') no-repeat;
-    background-position: 0 14px;
-    padding: 5px 20px;
-    line-height: 1.6;
-    font-weight: 300;
+    padding: 20px; /* Padding around the content */
 }
 
-/* -----------------Cardiology--  end---------------- */
-
-/* -----------cardio-------- */
-.cardio-sur-banner{
-    background: url('../../Assets/img/Banner-cardiothoracic-surgeon-1.jpg') no-repeat;
+.col-lg-6 {
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-
-/* -----------cardio--------- */
-
-/* -----------counsel-------- */
-.counsel-sur-banner{
-    background: url('../../Assets/img/Banner-Template_counsellor-1.jpg') no-repeat;
+.pad-left {
+    padding-left: 30px;
 }
 
-/* -----------counsel-------- */
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    /* Remove banner background and show the image */
+    .asth-banner {
+        background: none;  /* Hides the background image */
+        height: auto;  /* Adjust the height to auto to fit the content */
+    }
 
-/* --------Dentel------- */
-.dentel_banner{
-    background: url('../../Assets/img/Banner_58_Dental.jpg') no-repeat;
-}
+    /* Display image in mobile */
+    .banner-left1 img {
+        display: block;  /* Make sure the image is visible */
+        width: 100%;
+        max-width: 100%;  /* Full width of image on small screens */
+        margin-top: 20px;
+    }
+    .col-lg-6 h3{
+        color: #916a1e;
+    }
 
-/* --------Dentel------ */
+    /* Card boxe styling for mobile */
+    .boxe {
+        position: relative;
+        opacity: 1;  /* Make the card visible */
+        transform: translateY(0);  /* Card appears below the image */
+        margin-top: 20px;  /* Margin between image and card */
+    }
 
-/* --------------- */
+    .card-content {
+        padding: 14px;
+        width: 90%;  /* Card takes full width on mobile */
+        margin: 0 auto;  /* Center the card */
+    }
 
-.dentel_facio_banner{
-    background: url('../../Assets/img/Banner_dental-maxillofacial-surgery-.jpg')no-repeat;
-}
+    .card-content h1 {
+        font-size: 28px;
+        text-transform: uppercase;
+    }
 
-/* --------------- */
+    .card-content p {
+        font-size: 16px;
+        
+    }
 
-/* ================ */
-.dermo-banner{
-    background: url('../../Assets//img/Banner_7_Dertmatology.jpg')no-repeat;
-}
-
-/* ----------------- */
-
-.diabet-banner{
-    background: url('../../Assets/img/Banner_diabetes.jpg')no-repeat;
-}
-/* ------------- */
-
-.bannerr{
-    background: url('../../Assets/img/Banner-Template_counsellor-1.jpg')no-repeat;
-}
-
-.col-lg-6 h3 {
-    font-size: 32px;
-    color: #916a1e;
-    text-transform: uppercase;
-}
-
-.col-lg-6 .strongtag strong {
-    font-weight: bold;
-}
-
-/* ----------- */
-.endos-banner{
-    background: url('../../Assets/img/Banner_endoscopy.jpg') no-repeat;
-}
-
-/* ----------- */
-.ent-banner{
-    background: url('../../Assets/img/Banner_EarNoseThroat.jpg') no-repeat;
-}
-@media (min-width: 992px) {
+    /* Stacking columns for mobile */
     .col-lg-6 {
-        -ms-flex: 0 0 50%;
-        flex: 0 0 50%;
-        max-width: 50%;
+        width: 100%; /* Full width on mobile */
+        padding: 10px; /* Reduce padding on smaller screens */
     }
 }
-/* --------------------------------- */
-.gastro-banner{
-    background: url('../../Assets/img/Banner_10_Gastro.jpg')no-repeat;
-}
 
-
-/* ---------------- */
-
-.labsur-banner{
-    background: url('../../Assets/img/Banner-LaparoscopicSurgery.jpg') no-repeat;
-}
-
-/* --------------- */
-.hepo-banner{
-    background: url('../../Assets/img/Banner-Template_hepatology.jpg')no-repeat;
-}
-
-/* --------------- */
-
-.neph-banner{
-    background: url('../../Assets/img/Banner_nephrology.jpg')no-repeat;
-}
-/* --------------------- */
-
-.neuro-banner{
-    background: url('../../Assets/banner/Banner-Template_6.jpg')no-repeat;
-}
-
-/* ---------- */
-.neurosur-banner{
-    background: url('../../Assets/banner/neuro-surgeons.jpg')no-repeat;
-}
-/* ------------ */
-
-
-.obstet-banner{
-    background: url('../../Assets/banner/Banner_gynaecology.jpg')no-repeat;
-}
-
-
-/* ------------- */
-.oncol-banner{
-    background: url('../../Assets/banner/Banner_surgical-oncologist.jpg')no-repeat;
-}
-/* ----------- */
-
-.oncolmedi-banner{
-    background: url('../../Assets/banner/Banner-Template_13.jpg')no-repeat;
-}
-.innerimage {
-    padding: 60px 0 0;
-}
-@media (min-width: 992px) {
-    .order-lg-first {
-        -ms-flex-order: -1;
-        order: -1;
+/* For screens larger than 768px but smaller than 1440px */
+@media (min-width: 769px) {
+    /* Show the background for larger screens */
+    .asth-banner {
+        background-image: url('../../Assets/banner/Banner-Template_counsellor-1.jpg');  /* Banner background */
+        height: 100vh;  /* Full height for banner */
     }
-}
-.background2{
-    background: url('../../Assets/img/inner-image03.jpg') no-repeat;
-    padding: 40px 60px 40px 200px;
-    background-size: cover;
-    color: #fff;
-}
-.background2 p {
-    padding: 0 46px 18px 52px;
-}
-/* --------------- */
 
-.optho-banner{
-    background: url('../../Assets/banner/Banner-Template_18.jpg')no-repeat;
-}
+    /* Box container with animation for larger screens */
+    .boxe {
+        animation: slideIn 1s ease-out forwards;
+        opacity: 0;
+        transform: translateY(50%);
+        justify-content: start;
+    }
+    .col-lg-6 h3{
+        color: #916a1e;
+    }
 
-p.image-center {
-    text-align: center;
-    padding: 0 120px 0 0 !important;
-}
-.img.inner-image {
-    width: 200px;
-    height: 200px;
-}
-/* -------------- */
-.orthopedi-banner{
-    background: url('../../Assets/banner/Banner-Template_orthopaedic-surgeon.jpg')no-repeat;
-}
-/* ------------ */
-.paediat-banner{
-    background: url('../../Assets/banner/Banner-Paediatric.jpg')no-repeat;
-}
-/* ------------- */
-.plastic-banner{
-    background: url('../../Assets/banner/Banner-Template_23_PlasticSurgery.jpg')no-repeat;
+    /* Hide the image for larger screens */
+    .banner-left1 img {
+        display: none;  /* Hide the image on screens 769px and larger */
+    }
+
 }
 
-/* ------------- */
-
-.psycha-banner{
-    background: url('../../Assets/banner/Banner-Template_psychiatrist-1.jpg')no-repeat;
-}
-/* ----------- */
-.psychology-banner{
-    background: url('../../Assets/banner/Banner-Template_psychology.jpg')no-repeat;
-}
-/* -------------- */
-
-.pulmonogy-banner{
-    background: url('../../Assets/banner/Banner-pulmonologist-1.jpg')no-repeat;
-}
-/* ---------------- */
-.rheumatology-banner{
-    background: url('../../Assets/banner/Banner-Rheumatologist.jpg')no-repeat;
-}
-/* -------------- */
-.speech-banner{
-    background: url('../../Assets/banner/Banner-speech-therapist.jpg')no-repeat;
-}
-/* -------------- */
-.urology-banner{
-    background: url('../../Assets/banner/urology-banner.jpg')no-repeat;
-}
-/* ----------- */
-.vascular-banner{
-    background: url('../../Assets/banner/Banner_vascular-surgeon.jpg')no-repeat;
-}
-/* --------------- */
-.visit-banner{
-    background: url('../../Assets/banner/Banner_visiting-consultant.jpg')no-repeat;
-}

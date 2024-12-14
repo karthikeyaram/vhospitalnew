@@ -53,6 +53,8 @@ import Guidingphilosophy from '../components/AboutUs/Guidingphilosophy'
 import Insurance from '../components/AboutUs/Insurance'
 import Tieups from '../components/AboutUs/Tieups'
 import Gallery from '../components/AboutUs/Gallery'
+import Enrollonline from '../components/Academic/Enrollonline'
+import Career from '../components/AboutUs/Career'
 
 const Routecomponent = () => {
   return (
@@ -113,6 +115,8 @@ const Routecomponent = () => {
           <Route path='/about-us/insurance-venkataeswara-hospitals/' element={<Insurance/>}/>
           <Route path='/about-us/tieups-venkataeswara-hospitals/' element={<Tieups/>}/>
           <Route path='/gallery' element={<Gallery/>}/>
+          <Route path='/enroll-online' element={<Enrollonline/>}/>
+          <Route path='/career' element={<Career/>}/>
           
           
 

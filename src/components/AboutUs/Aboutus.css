@@ -40,3 +40,162 @@
     flex: 0 0 auto;
     margin: .5em;
 }
+/* --------------- */
+
+.career-banner{
+  background: url('../../Assets/banner/career.jpg')no-repeat;
+}
+.white {
+  color: #fff;
+}
+.white h3 {
+  font-size: 32px;
+  /* color: #916a1e; */
+  color: #fff;
+  text-transform: uppercase;
+}
+ h4, h5, h6 {
+  margin-bottom: .5rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  /* color: inherit; */
+}
+.row2 {
+  padding-top: 43px;
+}
+.row2 {
+  margin-top: 40px;
+}
+h6.position {
+  padding-bottom: 8px;
+  padding-top: 8px;
+  font-weight: 600;
+  color: #d69619;
+}
+h6 {
+  font-size: 1rem;
+}
+.h1, .h2, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  color: inherit;
+}
+.mrg-1 {
+  margin-top: 46px !important;
+}
+@media only screen and (min-width: 1024px) and (max-width: 1240px) {
+  .pad-left {
+      padding: 0 0 0 60px;
+  }
+}
+@media (min-width: 992px) {
+  .col-lg-12 {
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+}
+div.wpcf7 .screen-reader-response {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+h3 {
+  font-size: 32px;
+  color: #916a1e;
+  text-transform: uppercase;
+}
+.wpcf7-form-control-wrap {
+  position: relative;
+}
+input[type=text] {
+  color: #666;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+}
+button, input, optgroup, select, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+/* ------------------ */
+.rows.paddings {
+  padding: 60px; /* Add 60px padding to all sides */
+}
+.col-lg-12.pad-lefts {
+  padding-left: 60px; /* Add 60px padding only to the left side */
+}
+.screen-reader-response {
+  max-width: 600px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Inputs and Select */
+
+
+input[type="file"] {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+span {
+  display: inline-block;
+  margin-left: 10px;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Submit Button */
+button[type="submit"] {
+  background-color: #dad8d8;
+  color: #020202;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #bebebe;
+}
+
+/* Hover and Focus Effects */
+input:focus,
+select:focus {
+  border-color: #bebebe;
+  outline: none;
+  background-color: #eef7ff;
+}
